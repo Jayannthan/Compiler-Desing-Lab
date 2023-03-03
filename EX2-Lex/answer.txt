@@ -1,0 +1,204 @@
+Importing Package 		-->		 import java.util.Scanner;
+Multiline comment 		-->		 /*
+Public 
+Class
+Quicksort
+*/
+Access Specifiers 		-->		 public
+Keyword 		-->		 class
+Identifier 		-->		 Quicksort
+Spl char 		-->		 {
+Access Specifiers 		-->		 public
+Keyword 		-->		 static
+Keyword 		-->		 void
+function defn 		-->		 sort(int[] arr, int low, int high) {
+Keyword 		-->		 if
+Spl char 		-->		 (
+Identifier 		-->		 low
+Relational operator 	-->		 <
+Identifier 		-->		 high
+Spl char 		-->		 )
+Spl char 		-->		 {
+Keyword 		-->		 int
+Identifier 		-->		 pivot
+assignment operator 	-->		 =
+Identifier 		-->		 partition
+Spl char 		-->		 (
+Identifier 		-->		 arr
+Spl char 		-->		 ,
+Identifier 		-->		 low
+Spl char 		-->		 ,
+Identifier 		-->		 high
+Spl char 		-->		 )
+Spl char 		-->		 ;
+Identifier 		-->		 sort
+Spl char 		-->		 (
+Identifier 		-->		 arr
+Spl char 		-->		 ,
+Identifier 		-->		 low
+Spl char 		-->		 ,
+Identifier 		-->		 pivot
+Arithmetic operator 	-->		 -
+Number 			-->		 1
+Spl char 		-->		 )
+Spl char 		-->		 ;
+Identifier 		-->		 sort
+Spl char 		-->		 (
+Identifier 		-->		 arr
+Spl char 		-->		 ,
+Identifier 		-->		 pivot
+Arithmetic operator 	-->		 +
+Number 			-->		 1
+Spl char 		-->		 ,
+Identifier 		-->		 high
+Spl char 		-->		 )
+Spl char 		-->		 ;
+Spl char 		-->		 }
+Spl char 		-->		 }
+Access Specifiers 		-->		 private
+Keyword 		-->		 static
+Keyword 		-->		 int
+function defn 		-->		 partition(int[] arr, int low, int high) {
+Keyword 		-->		 int
+Identifier 		-->		 pivot
+assignment operator 	-->		 =
+Identifier 		-->		 arr[high]
+Spl char 		-->		 ;
+Keyword 		-->		 int
+Identifier 		-->		 i
+assignment operator 	-->		 =
+Identifier 		-->		 low
+Arithmetic operator 	-->		 -
+Number 			-->		 1
+Spl char 		-->		 ;
+Keyword 		-->		 for
+Spl char 		-->		 (
+Keyword 		-->		 int
+Identifier 		-->		 j
+assignment operator 	-->		 =
+Identifier 		-->		 low
+Spl char 		-->		 ;
+Identifier 		-->		 j
+Relational operator 	-->		 <
+Identifier 		-->		 high
+Spl char 		-->		 ;
+Identifier 		-->		 j
+Arithmetic operator 	-->		 +
+Arithmetic operator 	-->		 +
+Spl char 		-->		 )
+Spl char 		-->		 {
+Keyword 		-->		 if
+Spl char 		-->		 (
+Identifier 		-->		 arr[j]
+Relational operator 	-->		 <
+Identifier 		-->		 pivot
+Spl char 		-->		 )
+Spl char 		-->		 {
+Identifier 		-->		 i
+Arithmetic operator 	-->		 +
+Arithmetic operator 	-->		 +
+Spl char 		-->		 ;
+Keyword 		-->		 int
+Identifier 		-->		 temp
+assignment operator 	-->		 =
+Identifier 		-->		 arr[i]
+Spl char 		-->		 ;
+Identifier 		-->		 arr[i] = arr[j]
+Spl char 		-->		 ;
+Identifier 		-->		 arr[j]
+assignment operator 	-->		 =
+Identifier 		-->		 temp
+Spl char 		-->		 ;
+Spl char 		-->		 }
+Spl char 		-->		 }
+Keyword 		-->		 int
+Identifier 		-->		 temp
+assignment operator 	-->		 =
+Identifier 		-->		 arr[i + 1]
+Spl char 		-->		 ;
+Identifier 		-->		 arr[i + 1] = arr[high]
+Spl char 		-->		 ;
+Identifier 		-->		 arr[high]
+assignment operator 	-->		 =
+Identifier 		-->		 temp
+Spl char 		-->		 ;
+Keyword 		-->		 return
+Identifier 		-->		 i
+Arithmetic operator 	-->		 +
+Number 			-->		 1
+Spl char 		-->		 ;
+Spl char 		-->		 }
+Singleline Comment 		-->		 //main
+Access Specifiers 		-->		 public
+Keyword 		-->		 static
+Keyword 		-->		 void
+function defn 		-->		 main(String[] args) {
+Keyword 		-->		 int
+Identifier 		-->		 n
+Spl char 		-->		 ;
+Identifier 		-->		 Scanner
+Identifier 		-->		 sc
+assignment operator 	-->		 =
+Keyword 		-->		 new
+Identifier 		-->		 Scanner
+Spl char 		-->		 (
+Keyword 		-->		 System
+Attribute call 		-->		 .in
+Spl char 		-->		 )
+Spl char 		-->		 ;
+function call 		-->		 System.out.print("Enter the number of elements you want to store: ");
+Identifier 		-->		 n
+assignment operator 	-->		 =
+Identifier 		-->		 sc
+Attribute function call -->		 .nextInt()
+Spl char 		-->		 ;
+Identifier 		-->		 int[] array = new int[n]
+Spl char 		-->		 ;
+function call 		-->		 System.out.println("Enter the elements of the array: ");
+Keyword 		-->		 for
+Spl char 		-->		 (
+Keyword 		-->		 int
+Identifier 		-->		 i
+assignment operator 	-->		 =
+Number 			-->		 0
+Spl char 		-->		 ;
+Identifier 		-->		 i
+Relational operator 	-->		 <
+Identifier 		-->		 n
+Spl char 		-->		 ;
+Identifier 		-->		 i
+Arithmetic operator 	-->		 +
+Arithmetic operator 	-->		 +
+Spl char 		-->		 )
+Spl char 		-->		 {
+Identifier 		-->		 array[i]
+assignment operator 	-->		 =
+Identifier 		-->		 sc
+Attribute function call -->		 .nextInt()
+Spl char 		-->		 ;
+Spl char 		-->		 }
+Identifier 		-->		 sort
+Spl char 		-->		 (
+Identifier 		-->		 array
+Spl char 		-->		 ,
+Number 			-->		 0
+Spl char 		-->		 ,
+Identifier 		-->		 array
+Attribute call 		-->		 .length
+Arithmetic operator 	-->		 -
+Number 			-->		 1
+Spl char 		-->		 )
+Spl char 		-->		 ;
+function call 		-->		 System.out.print("sorted: ");
+Keyword 		-->		 for
+Spl char 		-->		 (
+Keyword 		-->		 int
+Identifier 		-->		 i
+:Identifier 		-->		 array
+Spl char 		-->		 )
+Spl char 		-->		 {
+function call 		-->		 System.out.print(i + " ");
+Spl char 		-->		 }
+Spl char 		-->		 }
+Spl char 		-->		 }
+
