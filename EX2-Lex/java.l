@@ -3,22 +3,32 @@
 #include<string.h>
 %}
 
+
+struct SymbolTableEntry {
+    char* name;
+    char* type;
+    int size;
+    char* value;
+};
+
+int symbolTableSize = 0;
+struct SymbolTableEntry symbolTable[100];
+
 digit [0-9]
 letter [a-zA-Z]
 id ({letter}|"_")({letter}|{digit})*
-arithop ["+""-""*""/""%"]
+arithop ["+""-""*"\/"%"]
 logicop (\&\&|\|\||\!)
-relop [<>!]
+relop [<>!]=?
 bitwise "|"|"&"|"^"|"~"|"<<"|">>"
 commentstart  "/*"
 commentend  "*/"
 assnop "="
-datatype ("char"|"double"|"int"|"float"|"long"|"short"|"signed"|"unsigned"|"void")
-keyword ("auto"|"break"|"case"|"const"|"continue"|"default"|"do"|"else"|"enum"|"extern"|"for"|"goto"|"if"|"register"|"return"|"sizeof"|"static"|"struct"|"switch"|"typedef"|"union"|"void"|"volatile"|"while")
-funcstart ("printf"|"scanf"|"getch"|"clrscr"|"main")
+datatype ("boolean"|"byte"|"short"|"int"|"long"|"float"|"double"|"char"|"String"|"void")
+keyword ("abstract"|"assert"|"boolean"|"break"|"byte"|"case"|"catch"|"char"|"class"|"const"|"continue"|"default"|"do"|"double"|"else"|"enum"|"extends"|"final"|"finally"|"float"|"for"|"if"|"implements"|"import"|"instanceof"|"int"|"interface"|"long"|"native"|"new"|"package"|"private"|"protected"|"public"|"return"|"short"|"static"|"strictfp"|"super"|"switch"|"synchronized"|"this"|"throw"|"throws"|"transient"|"try"|"void"|"volatile"|"while")
+funcstart ("System.out.println"|"System.out.print"|"Math."|"String."|"Integer."|"Double."|"Float."|"Boolean."|"Character.")
 %x COMMENT
 spl [";""(",")""{""}"","]
-
 
 %%
 #.*>           printf("Preprocessor Directive --> %s\n", yytext);
@@ -28,8 +38,6 @@ spl [";""(",")""{""}"","]
 
 "/*"            { BEGIN(COMMENT); printf("Multiline comment --> %s\n", yytext);}
 <COMMENT>"*/"   { BEGIN(INITIAL); printf("%s\n", yytext); }
-
-
 
 "//"(.*)$      printf("Singleline Comment --> %s\n", yytext);
 {digit}+      printf("Number --> %s\n", yytext);
