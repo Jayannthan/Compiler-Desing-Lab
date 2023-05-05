@@ -156,7 +156,28 @@ int main()
 	printf("\n	\nConstantFolding\n	\n");
 	for (int i = 0; i < loc; i++)
 	{
-		printf("%s := %s \n", lhs[i], rhs[i]);
+		int a = rhs[i][0]-'0';
+		int b = rhs[i][2]-'0';
+		if(a<10 && a>=0 && b<10 && b>=0){
+			if(rhs[i][1]=='+')			printf("%s := %d \n",lhs[i] ,a+b );
+			if(rhs[i][1]=='-')			printf("%s := %d \n",lhs[i] ,a-b );
+			if(rhs[i][1]=='*')			printf("%s := %d \n",lhs[i] ,a*b );
+			if(rhs[i][1]=='/')			printf("%s := %d \n",lhs[i] ,a/b );
+		}
+		
+		else if(a==0 || b==0){
+			if(rhs[i][1]=='*')	printf("%s := %d \n", lhs[i], 0);
+			else if(rhs[i][1]=='+' && a==0) {
+				if(b<10 && b>=0)	printf("%s := %d \n", lhs[i], b);
+				else printf("%s := %c \n", lhs[i], rhs[i][2]);
+			}
+			else if(rhs[i][1]=='+' && b==0){
+				if(a<10 && a>=0)	printf("%s := %d \n", lhs[i], a);
+				else printf("%s := %c \n", lhs[i], rhs[i][0]);
+			}
+		}
+		else printf("%s := %s \n", lhs[i], rhs[i]);
+		
 	}
 
 	for (int i = 0; i < loc; i++)
